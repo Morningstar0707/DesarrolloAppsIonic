@@ -21,4 +21,14 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pagina1/paginas/paginas.component').then((m) => m.PaginasComponent),
   },
+  {
+    path: '',
+    redirectTo: 'pagina2',
+    pathMatch: 'full',
+  },
+  {
+    path: 'pagina2',
+    loadComponent: () =>
+      import('./pagina1/paginas2/paginas2.component').then((m) => m.Paginas2Component),
+  },
 ];

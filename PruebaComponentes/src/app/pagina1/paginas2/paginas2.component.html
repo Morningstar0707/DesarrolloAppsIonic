@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Prueba de componentes en IONIC</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <ion-toolbar>
+      <p><strong class="capitalize">Infinite Scroll</strong></p>
+    </ion-toolbar>
+    <ion-list>
+      @for (item of items; track item; let index = $index) {
+      <ion-item>
+        <ion-avatar slot="start">
+          <img [src]="'https://picsum.photos/80/80?random=' + index" alt="avatar" />
+        </ion-avatar>
+        <ion-label>{{ item }}</ion-label>
+      </ion-item>
+      }
+    </ion-list>
+    <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <div id="container">
+      Git: <a target="_blank" rel="noopener noreferrer"
+        href="https://github.com/Morningstar0707">github.com/Morningstar0707</a>
+    </div>
+  </ion-toolbar>
+</ion-footer>

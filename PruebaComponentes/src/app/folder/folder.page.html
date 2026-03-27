@@ -124,7 +124,364 @@
     </ion-toolbar>
   </div>
 
-  <div style="height: 600px;"></div>
+  <div id="container8">
+    <ion-toolbar>
+      <p><strong class="capitalize">Ion-Picker/Prefix & Suffix Content</strong></p>
+      <ion-picker>
+        <ion-picker-column [value]="1">
+          <div slot="prefix">$</div>
+          <ion-picker-column-option value="" disabled="true">--</ion-picker-column-option>
+          <ion-picker-column-option [value]="1">1</ion-picker-column-option>
+          <ion-picker-column-option [value]="2">2</ion-picker-column-option>
+          <ion-picker-column-option [value]="3">3</ion-picker-column-option>
+          <ion-picker-column-option [value]="4">4</ion-picker-column-option>
+          <ion-picker-column-option [value]="5">5</ion-picker-column-option>
+          <div slot="suffix">USD</div>
+        </ion-picker-column>
+      </ion-picker>
+    </ion-toolbar>
+  </div>
+
+  <div id="container9">
+    <ion-toolbar>
+      <p><strong class="capitalize">ion-fab/CSS Shadow Parts</strong></p>
+      <br>
+    </ion-toolbar>
+    <ion-fab>
+      <ion-fab-button>
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="end">
+        <ion-fab-button>
+          <ion-icon name="document"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button>
+          <ion-icon name="color-palette"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button>
+          <ion-icon name="globe"></ion-icon>
+        </ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
+  </div>
+
+  <div id="container10">
+    <ion-toolbar>
+      <p><strong class="capitalize">Ion-input</strong></p>
+      <ion-list>
+        <ion-item>
+          <ion-input label="Default input"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input label="Input with placeholder" placeholder="Enter company name"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input label="Input with value" value="121 S Pinckney St #300"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input label="Readonly input" value="Madison" [readonly]="true"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input label="Disabled input" value="53703" [disabled]="true"></ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-toolbar>
+  </div>
+
+  <div id="container11">
+    <ion-toolbar>
+      <p><strong class="capitalize">Ion-Item</strong></p>
+      <ion-list>
+        <ion-item>
+          <ion-icon aria-hidden="true" name="airplane" slot="start"></ion-icon>
+          <ion-label>Airplane Mode</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon aria-hidden="true" name="wifi" slot="start"></ion-icon>
+          <ion-label>Wi-Fi</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon aria-hidden="true" name="bluetooth" slot="start"></ion-icon>
+          <ion-label>Bluetooth</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon aria-hidden="true" name="call" slot="start"></ion-icon>
+          <ion-label>Cellular</ion-label>
+        </ion-item>
+      </ion-list>
+
+      <ion-list>
+        <ion-item>
+          <ion-avatar aria-hidden="true" slot="start">
+            <img alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          </ion-avatar>
+          <ion-label>Huey</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-avatar aria-hidden="true" slot="start">
+            <img alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          </ion-avatar>
+          <ion-label>Dewey</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-avatar aria-hidden="true" slot="start">
+            <img alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          </ion-avatar>
+          <ion-label>Louie</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-avatar aria-hidden="true" slot="start">
+            <img alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          </ion-avatar>
+          <ion-label>Fooie</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-toolbar>
+  </div>
+
+  <div id="container12">
+    <ion-toolbar>
+      <p><strong class="capitalize">Metadata</strong></p>
+      <ion-list [inset]="true">
+        <ion-item [button]="true">
+          <ion-icon color="danger" slot="start" name="list-circle" size="large"></ion-icon>
+          <ion-label>General</ion-label>
+          <ion-note slot="end">6</ion-note>
+        </ion-item>
+        <ion-item [button]="true">
+          <ion-icon color="tertiary" slot="start" name="list-circle" size="large"></ion-icon>
+          <ion-label>Shopping</ion-label>
+          <ion-note slot="end">15</ion-note>
+        </ion-item>
+        <ion-item [button]="true">
+          <ion-icon color="success" slot="start" name="list-circle" size="large"></ion-icon>
+          <ion-label>Cleaning</ion-label>
+          <ion-note slot="end">3</ion-note>
+        </ion-item>
+        <ion-item [button]="true">
+          <ion-icon color="warning" slot="start" name="list-circle" size="large"></ion-icon>
+          <ion-label>Reminders</ion-label>
+          <ion-note slot="end">8</ion-note>
+        </ion-item>
+      </ion-list>
+
+      <ion-list [inset]="true">
+        <ion-item [button]="true" detail="false">
+          <div class="unread-indicator-wrapper" slot="start">
+            <div class="unread-indicator"></div>
+          </div>
+          <ion-label>
+            <strong>Rick Astley</strong>
+            <ion-text>Never Gonna Give You Up</ion-text><br />
+            <ion-note color="medium" class="ion-text-wrap">
+              Never gonna give you up Never gonna let you down Never gonna run...
+            </ion-note>
+          </ion-label>
+          <div class="metadata-end-wrapper" slot="end">
+            <ion-note color="medium">06:11</ion-note>
+            <ion-icon color="medium" name="chevron-forward"></ion-icon>
+          </div>
+        </ion-item>
+        <ion-item [button]="true" detail="false">
+          <div class="unread-indicator-wrapper" slot="start"></div>
+          <ion-label>
+            <strong>Ionitron</strong>
+            <ion-text>I have become sentient</ion-text><br />
+            <ion-note color="medium" class="ion-text-wrap">That is all.</ion-note>
+          </ion-label>
+          <div class="metadata-end-wrapper" slot="end">
+            <ion-note color="medium">03:44</ion-note>
+            <ion-icon color="medium" name="chevron-forward"></ion-icon>
+          </div>
+        </ion-item>
+        <ion-item [button]="true" detail="false">
+          <div class="unread-indicator-wrapper" slot="start">
+            <div class="unread-indicator"></div>
+          </div>
+          <ion-label>
+            <strong>Steam</strong>
+            <ion-text>Game Store Sale</ion-text><br />
+            <ion-note color="medium" class="ion-text-wrap">
+              That game you added to your wish list 2 years ago is now on sale!
+            </ion-note>
+          </ion-label>
+          <div class="metadata-end-wrapper" slot="end">
+            <ion-note color="medium">Yesterday</ion-note>
+            <ion-icon color="medium" name="chevron-forward"></ion-icon>
+          </div>
+        </ion-item>
+        <ion-item [button]="true" detail="false">
+          <div class="unread-indicator-wrapper" slot="start"></div>
+          <ion-label>
+            <strong>Ionic</strong>
+            <ion-text>Announcing Ionic 7.0</ion-text><br />
+            <ion-note color="medium" class="ion-text-wrap">This version is one more than Ionic 6!</ion-note>
+          </ion-label>
+          <div class="metadata-end-wrapper" slot="end">
+            <ion-note color="medium">Yesterday</ion-note>
+            <ion-icon color="medium" name="chevron-forward"></ion-icon>
+          </div>
+        </ion-item>
+      </ion-list>
+    </ion-toolbar>
+  </div>
+
+  <div id="container13">
+    <ion-toolbar>
+      <p><strong class="capitalize">Expandable Options</strong></p>
+      <ion-list>
+        <ion-item-sliding>
+          <ion-item-options side="start">
+            <ion-item-option color="success" expandable>Archive</ion-item-option>
+          </ion-item-options>
+
+          <ion-item>
+            <ion-label>Sliding Item with Expandable Options</ion-label>
+          </ion-item>
+
+          <ion-item-options side="end">
+            <ion-item-option>Favorite</ion-item-option>
+            <ion-item-option color="danger" expandable>Delete</ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+    </ion-toolbar>
+  </div>
+
+  <div id="container14">
+    <ion-toolbar>
+      <p><strong class="capitalize">Buttons in List Headers</strong></p>
+      <ion-list>
+        <ion-list-header>
+          <ion-label>Video Games</ion-label>
+          <ion-button>See All</ion-button>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Pokémon Yellow</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Mega Man X</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>The Legend of Zelda</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Pac-Man</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Super Mario World</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-toolbar>
+  </div>
+
+  <div id="container15">
+    <ion-toolbar>
+      <p><strong class="capitalize">Chip Avatar - ion img</strong></p>
+      <ion-chip>
+        <ion-avatar>
+          <img alt="Silhouette of a person's head"
+            src="https://img.freepik.com/vector-gratis/ilustracion-vectorial-demonio-samurai_43623-1596.jpg?semt=ais_hybrid&w=740&q=80" />
+        </ion-avatar>
+        <ion-label>Oni Samurai</ion-label>
+      </ion-chip>
+    </ion-toolbar>
+    <ion-img src="https://ih1.redbubble.net/image.5551844341.8527/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg"
+      alt="The Wisconsin State Capitol building in Madison, WI at night"></ion-img>
+  </div>
+
+  <div id="container16">
+    <ion-toolbar>
+      <p><strong class="capitalize">ion-modal/Setting a boolean value</strong></p>
+      <ion-button id="open-modal">Open</ion-button>
+      <ion-modal #modal trigger="open-modal" [canDismiss]="canDismiss" [presentingElement]="presentingElement">
+        <ng-template>
+          <ion-header>
+            <ion-toolbar>
+              <ion-title>Modal</ion-title>
+              <ion-buttons slot="end">
+                <ion-button (click)="modal.dismiss()">Close</ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content>
+            <p class="ion-padding-horizontal">You must accept the terms and conditions to close this modal.</p>
+            <ion-item>
+              <ion-checkbox id="terms" (ionChange)="onTermsChanged($event)" [checked]="canDismiss">
+                <div class="ion-text-wrap">Do you accept the terms and conditions?</div>
+              </ion-checkbox>
+            </ion-item>
+          </ion-content>
+        </ng-template>
+      </ion-modal>
+    </ion-toolbar>
+  </div>
+
+  <div id="container17">
+    <ion-toolbar>
+      <p><strong class="capitalize">ion-modal/Animations</strong></p>
+      <ion-button id="open-modal1">Open Modal</ion-button>
+
+      <ion-modal #modal1 trigger="open-modal1" [enterAnimation]="enterAnimation" [leaveAnimation]="leaveAnimation">
+        <ng-template>
+          <ion-header>
+            <ion-toolbar>
+              <ion-title>Modal</ion-title>
+              <ion-buttons slot="end">
+                <ion-button (click)="modal1.dismiss()">Close</ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content>
+            <ion-list>
+              <ion-item>
+                <ion-avatar slot="start">
+                  <ion-img src="https://i.pravatar.cc/300?u=b"></ion-img>
+                </ion-avatar>
+                <ion-label>
+                  <h2>Connor Smith</h2>
+                  <p>Sales Rep</p>
+                </ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-avatar slot="start">
+                  <ion-img src="https://i.pravatar.cc/300?u=a"></ion-img>
+                </ion-avatar>
+                <ion-label>
+                  <h2>Daniel Smith</h2>
+                  <p>Product Designer</p>
+                </ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-avatar slot="start">
+                  <ion-img src="https://i.pravatar.cc/300?u=d"></ion-img>
+                </ion-avatar>
+                <ion-label>
+                  <h2>Greg Smith</h2>
+                  <p>Director of Operations</p>
+                </ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-avatar slot="start">
+                  <ion-img src="https://i.pravatar.cc/300?u=e"></ion-img>
+                </ion-avatar>
+                <ion-label>
+                  <h2>Zoey Smith</h2>
+                  <p>CEO</p>
+                </ion-label>
+              </ion-item>
+            </ion-list>
+          </ion-content>
+        </ng-template>
+      </ion-modal>
+    </ion-toolbar>
+  </div>
+
+  <div style="height: 4000px;"></div>
 </ion-content>
 
 <ion-footer>
