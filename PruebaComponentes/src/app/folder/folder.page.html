@@ -481,7 +481,229 @@
     </ion-toolbar>
   </div>
 
-  <div style="height: 4000px;"></div>
+  <div id="container18">
+    <ion-toolbar>
+      <p><strong class="capitalize">Ion Popover - Nested Popovers</strong></p>
+      <ion-button id="popover-button">Open Menu</ion-button>
+      <ion-popover trigger="popover-button" [dismissOnSelect]="true">
+        <ng-template>
+          <ion-content>
+            <ion-list>
+              <ion-item [button]="true" [detail]="false">Option 1</ion-item>
+              <ion-item [button]="true" [detail]="false">Option 2</ion-item>
+              <ion-item [button]="true" id="nested-trigger">More options...</ion-item>
+
+              <ion-popover trigger="nested-trigger" [dismissOnSelect]="true" side="end">
+                <ng-template>
+                  <ion-content>
+                    <ion-list>
+                      <ion-item [button]="true" [detail]="false">Nested option</ion-item>
+                    </ion-list>
+                  </ion-content>
+                </ng-template>
+              </ion-popover>
+            </ion-list>
+          </ion-content>
+        </ng-template>
+      </ion-popover>
+    </ion-toolbar>
+  </div>
+
+  <div id="container19">
+    <ion-toolbar>
+      <p><strong class="capitalize">Ion-Skeleton-Text</strong></p>
+      <ion-list>
+        <ion-list-header>
+          <ion-skeleton-text [animated]="true" style="width: 80px"></ion-skeleton-text>
+        </ion-list-header>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+          </ion-thumbnail>
+          <ion-label>
+            <h3>
+              <ion-skeleton-text [animated]="true" style="width: 80%;"></ion-skeleton-text>
+            </h3>
+            <p>
+              <ion-skeleton-text [animated]="true" style="width: 60%;"></ion-skeleton-text>
+            </p>
+            <p>
+              <ion-skeleton-text [animated]="true" style="width: 30%;"></ion-skeleton-text>
+            </p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-toolbar>
+  </div>
+
+  <div id="container20">
+    <ion-toolbar>
+      <p><strong class="capitalize">Ion-Radio - Object Value References</strong></p>
+      <ion-list>
+        <ion-radio-group [compareWith]="compareWith" (ionChange)="handleChange($event)">
+          @for (food of foods; track food.id) {
+          <ion-item>
+            <ion-radio [value]="food">{{ food.name }}</ion-radio>
+          </ion-item>
+          }
+        </ion-radio-group>
+      </ion-list>
+    </ion-toolbar>
+  </div>
+
+  <div id="container21">
+    <ion-toolbar>
+      <p><strong class="capitalize">Ion-range - Pins</strong></p>
+      <ion-range aria-label="Range with pin" [pin]="true" [pinFormatter]="pinFormatter"></ion-range>
+    </ion-toolbar>
+  </div>
+
+  <div id="container22">
+    <ion-toolbar>
+      <p><strong class="capitalize">Ion Refresher - Pull Properties</strong></p>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Pull to Refresh</ion-title>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content class="ion-padding">
+        <ion-refresher slot="fixed" [pullFactor]="0.5" [pullMin]="100" [pullMax]="200"
+          (ionRefresh)="handleRefresh($event)">
+          <ion-refresher-content></ion-refresher-content>
+        </ion-refresher>
+
+        <p>Pull this content down to trigger the refresh.</p>
+      </ion-content>
+    </ion-toolbar>
+  </div>
+
+  <div id="container23">
+    <ion-toolbar>
+      <p><strong class="capitalize">Ion-Reorder - Custom Reorder Icon</strong></p>
+      <ion-list>
+        <!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
+        <!-- Casting $event to $any is a temporary fix for this bug https://github.com/ionic-team/ionic-framework/issues/24245 -->
+        <ion-reorder-group [disabled]="false" (ionReorderEnd)="handleReorderEnd($any($event))">
+          <ion-item>
+            <ion-label> Item 1 </ion-label>
+            <ion-reorder slot="end">
+              <ion-icon name="pizza"></ion-icon>
+            </ion-reorder>
+          </ion-item>
+
+          <ion-item>
+            <ion-label> Item 2 </ion-label>
+            <ion-reorder slot="end">
+              <ion-icon name="pizza"></ion-icon>
+            </ion-reorder>
+          </ion-item>
+
+          <ion-item>
+            <ion-label> Item 3 </ion-label>
+            <ion-reorder slot="end">
+              <ion-icon name="pizza"></ion-icon>
+            </ion-reorder>
+          </ion-item>
+
+          <ion-item>
+            <ion-label> Item 4 </ion-label>
+            <ion-reorder slot="end">
+              <ion-icon name="pizza"></ion-icon>
+            </ion-reorder>
+          </ion-item>
+
+          <ion-item>
+            <ion-label> Item 5 </ion-label>
+            <ion-reorder slot="end">
+              <ion-icon name="pizza"></ion-icon>
+            </ion-reorder>
+          </ion-item>
+        </ion-reorder-group>
+      </ion-list>
+    </ion-toolbar>
+  </div>
+
+  <div id="container24">
+    <ion-toolbar>
+      <p><strong class="capitalize">Ion searchbar - Debounce</strong></p>
+      <ion-searchbar [debounce]="1000" (ionInput)="handleInput($event)"></ion-searchbar>
+
+      <ion-list>
+        @for (result of results; track result) {
+        <ion-item>
+          <ion-label>{{ result }}</ion-label>
+        </ion-item>
+        }
+      </ion-list>
+    </ion-toolbar>
+  </div>
+
+  <div id="container25">
+    <ion-toolbar>
+      <p><strong class="capitalize">Ion segment</strong></p>
+      <ion-segment value="custom">
+        <ion-segment-button value="custom">
+          <ion-label>Custom</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="segment">
+          <ion-label>Segment</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="buttons">
+          <ion-label>Buttons</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
+  </div>
+
+  <div id="container26">
+    <ion-toolbar>
+      <p><strong class="capitalize">Ion select - Interface Options</strong></p>
+      <ion-list>
+        <ion-item>
+          <ion-select label="Alert" [interfaceOptions]="customAlertOptions" interface="alert" placeholder="Select One">
+            <ion-select-option value="bacon">Bacon</ion-select-option>
+            <ion-select-option value="onions">Onions</ion-select-option>
+            <ion-select-option value="pepperoni">Pepperoni</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-select label="Popover" [interfaceOptions]="customPopoverOptions" interface="popover"
+            placeholder="Select One">
+            <ion-select-option value="brown">Brown</ion-select-option>
+            <ion-select-option value="blonde">Blonde</ion-select-option>
+            <ion-select-option value="red">Red</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-select label="Action Sheet" [interfaceOptions]="customActionSheetOptions" interface="action-sheet"
+            placeholder="Select One">
+            <ion-select-option value="red">Red</ion-select-option>
+            <ion-select-option value="green">Green</ion-select-option>
+            <ion-select-option value="blue">Blue</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-select label="Modal" [interfaceOptions]="customModalOptions" interface="modal" placeholder="Select One">
+            <ion-select-option value="reese's">Reese's</ion-select-option>
+            <ion-select-option value="snickers">Snickers</ion-select-option>
+            <ion-select-option value="twix">Twix</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </ion-toolbar>
+  </div>
+
+  <div id="container27">
+    <ion-toolbar>
+      <p><strong class="capitalize">Ion tabs</strong></p>
+    </ion-toolbar>
+  </div>
+
+  <div style="height: 6000px;"></div>
 </ion-content>
 
 <ion-footer>
