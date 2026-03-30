@@ -1,9 +1,9 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IonSelect, IonSelectOption, IonSegment, IonSegmentButton, IonSearchbar, IonReorder, IonReorderGroup, ReorderEndCustomEvent, IonRefresher, IonRefresherContent, RefresherCustomEvent, IonRange, IonRadio, IonRadioGroup, IonSkeletonText, IonThumbnail, IonPopover, AnimationController, CheckboxCustomEvent, IonImg, IonListHeader, IonItemOption, IonItemOptions, IonItemSliding, IonNote, IonText, IonAvatar, IonInput, IonList, IonFab, IonFabButton, IonFabList, IonPicker, IonPickerColumn, IonPickerColumnOption, IonDatetime, IonDatetimeButton, IonModal, ScrollDetail, IonChip, IonCheckbox, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent, IonAccordion, IonAccordionGroup, IonItem, IonLabel, IonFooter, IonActionSheet, IonButton, IonAlert, IonBadge, IonTabBar, IonTabButton, IonIcon, IonBreadcrumb, IonBreadcrumbs } from '@ionic/angular/standalone';
+import { IonToggle, IonToast, IonTab, IonTabs,IonSelect, IonSelectOption, IonSegment, IonSegmentButton, IonSearchbar, IonReorder, IonReorderGroup, ReorderEndCustomEvent, IonRefresher, IonRefresherContent, RefresherCustomEvent, IonRange, IonRadio, IonRadioGroup, IonSkeletonText, IonThumbnail, IonPopover, AnimationController, CheckboxCustomEvent, IonImg, IonListHeader, IonItemOption, IonItemOptions, IonItemSliding, IonNote, IonText, IonAvatar, IonInput, IonList, IonFab, IonFabButton, IonFabList, IonPicker, IonPickerColumn, IonPickerColumnOption, IonDatetime, IonDatetimeButton, IonModal, ScrollDetail, IonChip, IonCheckbox, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent, IonAccordion, IonAccordionGroup, IonItem, IonLabel, IonFooter, IonActionSheet, IonButton, IonAlert, IonBadge, IonTabBar, IonTabButton, IonIcon, IonBreadcrumb, IonBreadcrumbs } from '@ionic/angular/standalone';
 
 import { addIcons } from 'ionicons';
-import { pizza, chevronForward, listCircle, airplane, bluetooth, call, wifi, heart, calendar, musicalNote, camera, film, flash, home, add, colorPalette, document, globe } from 'ionicons/icons';
+import { warning, library, playCircle, radio, search, pizza, chevronForward, listCircle, airplane, bluetooth, call, wifi, heart, calendar, musicalNote, camera, film, flash, home, add, colorPalette, document, globe } from 'ionicons/icons';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 
 interface Food {
@@ -17,7 +17,7 @@ interface Food {
   templateUrl: './folder.page.html',
   standalone: true,
   styleUrls: ['./folder.page.scss'],
-  imports: [IonSelect, IonSelectOption, IonSegment, IonSegmentButton, IonSearchbar, IonReorder, IonReorderGroup, IonRefresher, IonRefresherContent, IonRange, IonListHeader, IonSkeletonText, IonThumbnail, IonPopover, IonImg, IonListHeader, IonNote, IonText, IonAvatar, IonInput, IonItem, IonList, IonFab, IonFabButton, IonFabList, IonIcon, IonPicker, IonPickerColumn, IonPickerColumnOption, IonDatetime, IonDatetimeButton, IonModal, IonContent, ReactiveFormsModule, IonChip, IonCheckbox, IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent, IonAccordion, IonAccordionGroup, IonItem, IonLabel, IonFooter, IonActionSheet, IonButton, IonAlert, IonBadge, IonTabBar, IonTabButton, IonIcon, IonBreadcrumb, IonBreadcrumbs, IonItemOption, IonItemOptions, IonItemSliding, IonItem, IonItemOption, IonItemOptions, IonItemSliding, IonLabel, IonList, IonRadio, IonRadioGroup],
+  imports: [IonToggle, IonToast, IonTab, IonTabs, IonSelect, IonSelectOption, IonSegment, IonSegmentButton, IonSearchbar, IonReorder, IonReorderGroup, IonRefresher, IonRefresherContent, IonRange, IonListHeader, IonSkeletonText, IonThumbnail, IonPopover, IonImg, IonListHeader, IonNote, IonText, IonAvatar, IonInput, IonItem, IonList, IonFab, IonFabButton, IonFabList, IonIcon, IonPicker, IonPickerColumn, IonPickerColumnOption, IonDatetime, IonDatetimeButton, IonModal, IonContent, ReactiveFormsModule, IonChip, IonCheckbox, IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent, IonAccordion, IonAccordionGroup, IonItem, IonLabel, IonFooter, IonActionSheet, IonButton, IonAlert, IonBadge, IonTabBar, IonTabButton, IonIcon, IonBreadcrumb, IonBreadcrumbs, IonItemOption, IonItemOptions, IonItemSliding, IonItem, IonItemOption, IonItemOptions, IonItemSliding, IonLabel, IonList, IonRadio, IonRadioGroup],
 })
 export class FolderPage implements OnInit {
   public folder!: string;
@@ -33,9 +33,10 @@ export class FolderPage implements OnInit {
     * can be registered in app.component.ts and then
     * referenced by name anywhere in your application.
     */
-    addIcons({ pizza, chevronForward, listCircle, airplane, bluetooth, call, wifi, heart, calendar, musicalNote, camera, film, flash, home, add, colorPalette, document, globe });
+    addIcons({ warning, library, playCircle, radio, search, pizza, chevronForward, listCircle, airplane, bluetooth, call, wifi, heart, calendar, musicalNote, camera, film, flash, home, add, colorPalette, document, globe });
     this.myForm = this.fb.group({
       agree: [false, Validators.requiredTrue],
+      wifi: [true, Validators.requiredTrue],
     });
   }
 
@@ -213,4 +214,10 @@ export class FolderPage implements OnInit {
     breakpoints: [0, 0.5],
     initialBreakpoint: 0.5,
   };
+
+  onChange() {
+    // Mark the control as touched to trigger the error message
+    // without requiring the toggle to be blurred first
+    this.myForm.get('wifi')!.markAsTouched();
+  }
 }
